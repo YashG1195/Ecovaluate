@@ -10,11 +10,11 @@ export function Header() {
         </div>
         <nav className="nav">
           <a href="#home">Home</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#market-rates">Market Rates</a>
-          <a href="#about">About Us</a>
+          <a href="#ai-identifier">AI Identifier</a>
+          <a href="#analytics-dashboard">Dashboard</a>
+          <a href="#about">About</a>
         </nav>
-        <button className="btn btn-primary">Start Scanning</button>
+        <button className="btn btn-primary header-live-pill">Live Prices</button>
       </div>
     </header>
   );
