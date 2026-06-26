@@ -6,12 +6,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 // 2. Add a new Web App to your project
 // 3. Paste the configuration here
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAaQnWh8txzMLB0SeZ3xrjEZXbbCSApxfY",
+  authDomain: "ecovaluate-64841.firebaseapp.com",
+  projectId: "ecovaluate-64841",
+  storageBucket: "ecovaluate-64841.firebasestorage.app",
+  messagingSenderId: "211773290381",
+  appId: "1:211773290381:web:46390a9270453a026f6fc4"
 };
 
 // Initialize Firebase
