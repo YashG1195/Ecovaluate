@@ -17,6 +17,7 @@ import Dashboard   from "./pages/Dashboard.jsx";
 import MarketRates from "./pages/MarketRates.jsx";
 import Enterprise  from "./pages/Enterprise.jsx";
 import History     from "./pages/History.jsx";
+import Scanner     from "./pages/Scanner.jsx";
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/market-rates" element={<MarketRates />} />
         <Route path="/enterprise"   element={<Enterprise />}  />
         <Route path="/history"      element={<History />}     />
+        <Route path="/scanner"      element={<Scanner />}     />
 
         {/* ── Public landing page (shared Header + Footer) ── */}
         <Route
