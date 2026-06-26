@@ -5,3 +5,6 @@ dist
 *.tmp
 *.env
 
+# Backend has its own git repo — track it separately
+MINOR-PROJECT-BACKEND/
+

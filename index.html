@@ -2,8 +2,110 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>EcoValuate</title>
+    <title>EcoValuate – Maximize Device Value. Minimize E-Waste.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EcoValuate uses advanced AI to instantly grade device condition, securely wipe data, and find the best trade-in or recycling value." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS with plugins (for design token classes) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed-variant": "#004493",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#dfe3e5",
+              "primary-fixed": "#82faab",
+              "on-error-container": "#93000a",
+              "surface-container-low": "#f0f4f6",
+              "emerald-dark": "#0A7A42",
+              "surface-white": "#FFFFFF",
+              "on-surface-variant": "#3e4a3f",
+              "surface-tint": "#006d3a",
+              "on-tertiary-container": "#fdfcff",
+              "secondary": "#0058bb",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#001a41",
+              "outline": "#6d7a6f",
+              "primary-container": "#008649",
+              "primary": "#006a39",
+              "tertiary": "#535d68",
+              "on-secondary-container": "#fefcff",
+              "slate-muted": "#6B7280",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#00522b",
+              "tertiary-fixed-dim": "#bdc7d5",
+              "tertiary-fixed": "#d9e3f1",
+              "surface-bright": "#f6fafc",
+              "primary-fixed-dim": "#64dd91",
+              "on-primary-container": "#f6fff4",
+              "surface-dim": "#d6dbdd",
+              "outline-variant": "#bdcabc",
+              "on-primary-fixed": "#00210e",
+              "secondary-fixed-dim": "#adc7ff",
+              "inverse-on-surface": "#edf1f3",
+              "tertiary-container": "#6b7681",
+              "secondary-fixed": "#d8e2ff",
+              "surface": "#f6fafc",
+              "on-background": "#171c1e",
+              "mint-bg": "#EAF4F4",
+              "success-green": "#4ADE80",
+              "inverse-surface": "#2c3133",
+              "secondary-container": "#1471e6",
+              "surface-variant": "#dfe3e5",
+              "surface-container-high": "#e5e9eb",
+              "border-subtle": "#D7E2EB",
+              "surface-container-lowest": "#ffffff",
+              "surface-container": "#eaeef0",
+              "on-error": "#ffffff",
+              "inverse-primary": "#64dd91",
+              "on-tertiary": "#ffffff",
+              "background": "#f6fafc",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#121d26",
+              "on-surface": "#171c1e",
+              "on-tertiary-fixed-variant": "#3e4853"
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px"
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "headline-md": ["Hanken Grotesk"],
+              "headline-lg": ["Hanken Grotesk"],
+              "body-md": ["Inter"],
+              "hero-display": ["Hanken Grotesk"],
+              "label-caps": ["Hanken Grotesk"],
+              "hero-display-mobile": ["Hanken Grotesk"],
+              "button-text": ["Hanken Grotesk"]
+            },
+            fontSize: {
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+              "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "600" }],
+              "body-md": ["15px", { lineHeight: "1.5", fontWeight: "400" }],
+              "hero-display": ["52px", { lineHeight: "1.1", fontWeight: "700" }],
+              "label-caps": ["12px", { lineHeight: "1.0", letterSpacing: "0.18em", fontWeight: "700" }],
+              "hero-display-mobile": ["36px", { lineHeight: "1.1", fontWeight: "700" }],
+              "button-text": ["15px", { lineHeight: "1.0", fontWeight: "600" }]
+            }
+          }
+        }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -4,7 +4,7 @@ const team = [
   { name: "Akash", role: "ML Engineer", blurb: "Designs the model that turns messy circuit photos into clean component detections." },
   { name: "Yash", role: "Product Designer", blurb: "Shapes the EcoValuate experience, from first scan to final payout." },
   { name: "Dipto", role: "Backend Engineer", blurb: "Builds the pricing engine and data pipeline that keeps rates live." },
-  { name: "Dharmendra", role: "Research & Data", blurb: "Finds new e‑waste sources and refines how the model values them." },
+  { name: "Dhirendra", role: "Research & Data", blurb: "Finds new e‑waste sources and refines how the model values them." },
 ];
 
 export function AboutSection() {
