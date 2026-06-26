@@ -130,14 +130,18 @@ export default function VerifyOtp() {
                   Enter OTP
                 </label>
                 <input
-                  className="w-full px-4 py-3 rounded-[8px] border border-slate-200 focus:ring-2 focus:ring-[#0f9d58]/20 focus:border-[#0f9d58] outline-none transition-all text-center text-lg tracking-widest placeholder:tracking-normal placeholder:text-slate-400"
+                  className="w-full px-4 py-3 rounded-[8px] border border-slate-200 focus:ring-2 focus:ring-[#0f9d58]/20 focus:border-[#0f9d58] outline-none transition-all text-center text-lg tracking-widest text-slate-900 placeholder:tracking-normal placeholder:text-slate-400"
                   id="otp"
                   name="otp"
-                  placeholder="Enter OTP"
+                  placeholder="Enter OTP (e.g. 123456)"
                   required
                   type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  maxLength={6}
+                  autoComplete="one-time-code"
                   value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
+                  onChange={(e) => setOtp(e.target.value.replace(/[^0-9]/g, ''))}
                   disabled={isLoading}
                 />
               </div>
