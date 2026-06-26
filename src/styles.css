@@ -53,6 +53,24 @@ body {
 /* ── Material Symbol filled variant ── */
 .icon-fill { font-variation-settings: 'FILL' 1; }
 
+/* ── Dashboard primary gradient button ── */
+.btn-primary-glow {
+  background: linear-gradient(135deg, #0A7A42, #006a39);
+  box-shadow: 0 4px 14px rgba(0, 106, 57, 0.3);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.btn-primary-glow:hover {
+  box-shadow: 0 6px 20px rgba(0, 106, 57, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Glass panel (dashboard sidebar / cards) ── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
 /* ── Ensure main has no extra padding for landing page ── */
 main {
   padding-block: 0;
