@@ -12,7 +12,11 @@ export const registerUser = async (payload) => {
 export const verifyOtp = async (payload) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve({ success: true, message: "OTP Verified" });
+      if (payload.otp === "123456") {
+        resolve({ success: true, message: "OTP Verified" });
+      } else {
+        resolve({ success: false, message: "Invalid OTP. Use 123456 for testing." });
+      }
     }, 800);
   });
 };

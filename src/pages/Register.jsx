@@ -76,6 +76,14 @@ export default function Register() {
 
       if (res.success) {
         setSuccess(true);
+        
+        // Alert the user with the mock OTP since backend is unavailable
+        alert(
+          `📧 MOCK EMAIL SENT to ${form.email}\n\n` +
+          `Your Verification OTP is: 123456\n\n` +
+          `(This is a simulation since the backend server is not running)`
+        );
+
         setTimeout(
           () => navigate("/verify-otp", { state: { email: form.email } }),
           700
