@@ -9,7 +9,7 @@ import Login     from "./pages/Login.jsx";
 import Register  from "./pages/Register.jsx";
 import VerifyOtp from "./pages/VerifyOtp.jsx";
 
-// Landing page (with shared header/footer)
+// Landing page
 import Home from "./pages/Home.jsx";
 
 // Authenticated dashboard pages (each uses DashboardLayout internally)
@@ -18,6 +18,17 @@ import MarketRates from "./pages/MarketRates.jsx";
 import Enterprise  from "./pages/Enterprise.jsx";
 import History     from "./pages/History.jsx";
 import Scanner     from "./pages/Scanner.jsx";
+
+/* ── Wrapper that adds shared Header + Footer ── */
+function PublicLayout({ children }) {
+  return (
+    <div className="app min-h-screen flex flex-col">
+      <Header />
+      {children}
+      <Footer />
+    </div>
+  );
+}
 
 export default function App() {
   return (
@@ -28,24 +39,20 @@ export default function App() {
         <Route path="/register"   element={<Register />}  />
         <Route path="/verify-otp" element={<VerifyOtp />} />
 
-        {/* ── Dashboard routes (own sidebar layout) ── */}
+        {/* ── Dashboard routes (own DashboardLayout sidebar) ── */}
         <Route path="/dashboard"    element={<Dashboard />}   />
         <Route path="/market-rates" element={<MarketRates />} />
         <Route path="/enterprise"   element={<Enterprise />}  />
         <Route path="/history"      element={<History />}     />
         <Route path="/scanner"      element={<Scanner />}     />
 
-        {/* ── Public landing page (shared Header + Footer) ── */}
+        {/* ── Public landing page (Header + Footer wrapper) ── */}
         <Route
-          path="/*"
+          path="/"
           element={
-            <div className="app min-h-screen flex flex-col">
-              <Header />
-              <Routes>
-                <Route path="/" element={<Home />} />
-              </Routes>
-              <Footer />
-            </div>
+            <PublicLayout>
+              <Home />
+            </PublicLayout>
           }
         />
       </Routes>
