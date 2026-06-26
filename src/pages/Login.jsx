@@ -45,7 +45,7 @@ export default function Login() {
       if (res.success && res.data && res.data.accessToken) {
         localStorage.setItem("token", res.data.accessToken);
         setSuccess(true);
-        setTimeout(() => navigate("/"), 800);
+        setTimeout(() => navigate("/dashboard"), 800);
       } else {
         setError(res.message || "Login failed");
       }

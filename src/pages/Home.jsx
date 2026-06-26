@@ -1,16 +1,16 @@
 // src/pages/Home.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 
 /* ─── Helper: primary CTA button ─── */
-function PrimaryBtn({ children, className = "" }) {
-  return (
-    <button
-      className={`inline-flex items-center justify-center px-6 py-2.5 rounded-full font-semibold text-[15px] bg-[#006a39] text-white hover:bg-[#0A7A42] hover:-translate-y-[1px] transition-all gap-2 ${className}`}
-      style={{ boxShadow: "0 4px 12px rgba(0,106,57,0.2)" }}
-    >
-      {children}
-    </button>
-  );
+function PrimaryBtn({ children, className = "", to, onClick }) {
+  const classes = `inline-flex items-center justify-center px-6 py-2.5 rounded-full font-semibold text-[15px] bg-[#006a39] text-white hover:bg-[#0A7A42] hover:-translate-y-[1px] transition-all gap-2 no-underline ${className}`;
+  const style = { boxShadow: "0 4px 12px rgba(0,106,57,0.2)" };
+
+  if (to) {
+    return <Link to={to} className={classes} style={style}>{children}</Link>;
+  }
+  return <button onClick={onClick} className={classes} style={style}>{children}</button>;
 }
 
 /* ─── Helper: ghost / outlined button ─── */
@@ -46,7 +46,7 @@ function HeroSection() {
             EcoValuate uses advanced AI to instantly grade device condition, securely wipe data, and find the best trade-in or recycling value.
           </p>
           <div className="flex flex-wrap gap-4">
-            <PrimaryBtn>
+            <PrimaryBtn to="/register">
               Get Started <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </PrimaryBtn>
             <GhostBtn>Watch Demo</GhostBtn>
@@ -282,7 +282,7 @@ function EnterpriseSection() {
               </div>
             </div>
 
-            <PrimaryBtn>
+            <PrimaryBtn to="/register">
               Explore Enterprise <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </PrimaryBtn>
           </div>
