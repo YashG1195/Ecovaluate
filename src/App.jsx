@@ -4,10 +4,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header.jsx";
 import { Footer } from "./components/Footer.jsx";
 
-// Auth pages (full-screen, no shared header/footer)
+// Full-screen auth routes
 import Login     from "./pages/Login.jsx";
 import Register  from "./pages/Register.jsx";
-import VerifyOtp from "./pages/VerifyOtp.jsx";
 
 // Landing page
 import Home from "./pages/Home.jsx";
@@ -37,7 +36,6 @@ export default function App() {
         {/* ── Full-screen auth routes ── */}
         <Route path="/login"      element={<Login />}     />
         <Route path="/register"   element={<Register />}  />
-        <Route path="/verify-otp" element={<VerifyOtp />} />
 
         {/* ── Dashboard routes (own DashboardLayout sidebar) ── */}
         <Route path="/dashboard"    element={<Dashboard />}   />

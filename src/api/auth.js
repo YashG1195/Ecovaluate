@@ -1,34 +1,41 @@
-import { apiClient } from "./client";
+import { 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword,
+  signInWithPopup
+} from "firebase/auth";
+import { auth, googleProvider } from "../firebase";
 
-// Mock implementations since backend is currently unavailable
 export const registerUser = async (payload) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ success: true, message: "Registration successful" });
-    }, 800);
-  });
-};
-
-export const verifyOtp = async (payload) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      if (payload.otp === "123456") {
-        resolve({ success: true, message: "OTP Verified" });
-      } else {
-        resolve({ success: false, message: "Invalid OTP. Use 123456 for testing." });
-      }
-    }, 800);
-  });
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, payload.email, payload.password);
+    return { success: true, message: "Registration successful", user: userCredential.user };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
 };
 
 export const loginUser = async (payload) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({ 
-        success: true, 
-        message: "Login successful", 
-        data: { accessToken: "mock-jwt-token-12345" } 
-      });
-    }, 800);
-  });
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, payload.email, payload.password);
+    return { 
+      success: true, 
+      message: "Login successful", 
+      data: { accessToken: await userCredential.user.getIdToken() } 
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+};
+
+export const signInWithGoogle = async () => {
+  try {
+    const userCredential = await signInWithPopup(auth, googleProvider);
+    return { 
+      success: true, 
+      message: "Login successful", 
+      data: { accessToken: await userCredential.user.getIdToken() } 
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
 };
