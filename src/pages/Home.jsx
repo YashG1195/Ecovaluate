@@ -51,7 +51,14 @@ function HeroSection() {
             </PrimaryBtn>
             <GhostBtn>Watch Demo</GhostBtn>
           </div>
-          <p className="mt-5 text-sm text-slate-500">Join 10,000+ businesses optimizing their IT lifecycle.</p>
+          <p class="mt-6 text-sm text-slate-500 flex items-center gap-2">
+            <span class="flex -space-x-2">
+              <span class="w-6 h-6 rounded-full border-2 border-white bg-slate-200"></span>
+              <span class="w-6 h-6 rounded-full border-2 border-white bg-slate-300"></span>
+              <span class="w-6 h-6 rounded-full border-2 border-white bg-slate-400"></span>
+            </span>
+            Join 10,000+ businesses optimizing their IT lifecycle.
+          </p>
         </div>
 
         {/* Right preview cards */}
@@ -59,36 +66,36 @@ function HeroSection() {
           {/* Live AI Scan Preview */}
           <div className="w-full max-w-[480px] aspect-square rounded-[2rem] overflow-hidden relative shadow-2xl border border-white/50 scan-overlay">
             {/* Background Image */}
-            <div 
-              className="absolute inset-0 z-0 bg-cover bg-center" 
+            <div
+              className="absolute inset-0 z-0 bg-cover bg-center"
               style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2zQ9LqoNNcrDC9t5SgDcHh1Gep4U1Hfv1FVRlbNiv1Tuho4w_p63HILpQlIbflnTDoVlRuqEwp1-fqdPQqG0l5w8qn3wWXgNeGZ4lB7obrZPSlWcwTGK10oitkRy5_EJqTBtWAMk8PXwziI8SoHNrvxhZD6i7cL2Vn8A2yMLCh6OkpVSH0I00ywwIMvM7NWqxi93gp9bWsVksMb2ZVLRACBAW-nREvcXzeV_xRWb3NBjh8NKDPDoQMiJ8u-ReCEdNPMG6d-KzN_o')" }}
             ></div>
-            
+
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10"></div>
 
             {/* Floating Data Chips */}
-            <div 
+            <div
               className="absolute top-8 right-8 p-4 rounded-xl shadow-lg z-20 animate-bounce"
-              style={{ 
-                background: "rgba(255,255,255,0.85)", 
+              style={{
+                background: "rgba(255,255,255,0.85)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
-                border: "1px solid rgba(255,255,255,0.6)" 
+                border: "1px solid rgba(255,255,255,0.6)"
               }}
             >
               <p className="text-[10px] text-[#006a39] font-bold uppercase tracking-widest mb-1">RECOVERY VALUE</p>
               <p className="text-2xl font-bold text-[#171c1e]" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>$342.15</p>
             </div>
 
-            <div 
-              className="absolute bottom-10 left-8 p-4 rounded-xl shadow-lg z-20 animate-pulse" 
-              style={{ 
+            <div
+              className="absolute bottom-10 left-8 p-4 rounded-xl shadow-lg z-20 animate-pulse"
+              style={{
                 animationDelay: "1.5s",
-                background: "rgba(255,255,255,0.85)", 
+                background: "rgba(255,255,255,0.85)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
-                border: "1px solid rgba(255,255,255,0.6)" 
+                border: "1px solid rgba(255,255,255,0.6)"
               }}
             >
               <div className="flex items-center gap-2 text-[#006a39]">
@@ -486,11 +493,10 @@ function AIAnalyzerSection() {
                   {["Component", "Smartphone", "Laptop", "Server"].map((cat, i) => (
                     <button
                       key={cat}
-                      className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-colors border ${
-                        i === 0
+                      className={`px-4 py-2 rounded-full text-sm cursor-pointer transition-colors border ${i === 0
                           ? "bg-[#006a39] text-white border-[#006a39]"
                           : "bg-slate-800/80 border-slate-700 text-slate-400 hover:bg-slate-700"
-                      }`}
+                        }`}
                     >
                       {cat}
                     </button>
