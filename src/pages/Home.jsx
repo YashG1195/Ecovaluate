@@ -55,56 +55,47 @@ function HeroSection() {
         </div>
 
         {/* Right preview cards */}
-        <div className="grid gap-5">
-          {/* Device analysis card */}
-          <div className="bg-[radial-gradient(circle_at_0_0,#f1f5f9_0,#f8fafc_100%)] border border-[#D7E2EB] rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow bg-white">
-            <div className="flex justify-between items-center text-sm text-slate-500">
-              <span>Device Analysis</span>
-              <span className="material-symbols-outlined">wifi_tethering</span>
+        <div className="flex justify-center items-center w-full lg:justify-end">
+          {/* Live AI Scan Preview */}
+          <div className="w-full max-w-[480px] aspect-square rounded-[2rem] overflow-hidden relative shadow-2xl border border-white/50 scan-overlay">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 z-0 bg-cover bg-center" 
+              style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2zQ9LqoNNcrDC9t5SgDcHh1Gep4U1Hfv1FVRlbNiv1Tuho4w_p63HILpQlIbflnTDoVlRuqEwp1-fqdPQqG0l5w8qn3wWXgNeGZ4lB7obrZPSlWcwTGK10oitkRy5_EJqTBtWAMk8PXwziI8SoHNrvxhZD6i7cL2Vn8A2yMLCh6OkpVSH0I00ywwIMvM7NWqxi93gp9bWsVksMb2ZVLRACBAW-nREvcXzeV_xRWb3NBjh8NKDPDoQMiJ8u-ReCEdNPMG6d-KzN_o')" }}
+            ></div>
+            
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10"></div>
+
+            {/* Floating Data Chips */}
+            <div 
+              className="absolute top-8 right-8 p-4 rounded-xl shadow-lg z-20 animate-bounce"
+              style={{ 
+                background: "rgba(255,255,255,0.85)", 
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                border: "1px solid rgba(255,255,255,0.6)" 
+              }}
+            >
+              <p className="text-[10px] text-[#006a39] font-bold uppercase tracking-widest mb-1">RECOVERY VALUE</p>
+              <p className="text-2xl font-bold text-[#171c1e]" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>$342.15</p>
             </div>
-            <div className="relative mt-4 min-h-[240px] rounded-xl border border-dashed border-[#D7E2EB] bg-[#f0f4f6] overflow-hidden">
-              {/* Inner subtle background card */}
-              <div className="absolute inset-[16px_24px_32px] rounded-lg bg-white shadow-sm"></div>
-              
-              {/* Floating Data Chips */}
-              <div 
-                className="absolute top-6 right-6 p-4 rounded-xl shadow-lg z-20 animate-bounce"
-                style={{ 
-                  background: "rgba(255,255,255,0.7)", 
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                  border: "1px solid rgba(255,255,255,0.4)" 
-                }}
-              >
-                <p className="text-[10px] text-[#006a39] font-bold uppercase tracking-widest mb-1">RECOVERY VALUE</p>
-                <p className="text-2xl font-bold text-[#171c1e]" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>$342.15</p>
-              </div>
 
-              <div 
-                className="absolute bottom-12 left-6 p-4 rounded-xl shadow-lg z-20 animate-pulse" 
-                style={{ 
-                  animationDelay: "1.5s",
-                  background: "rgba(255,255,255,0.7)", 
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                  border: "1px solid rgba(255,255,255,0.4)" 
-                }}
-              >
-                <div className="flex items-center gap-2 text-[#006a39]">
-                  <span className="material-symbols-outlined text-[18px]">eco</span>
-                  <span className="font-semibold text-[14px]">8.2kg CO2 Offset</span>
-                </div>
+            <div 
+              className="absolute bottom-10 left-8 p-4 rounded-xl shadow-lg z-20 animate-pulse" 
+              style={{ 
+                animationDelay: "1.5s",
+                background: "rgba(255,255,255,0.85)", 
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                border: "1px solid rgba(255,255,255,0.6)" 
+              }}
+            >
+              <div className="flex items-center gap-2 text-[#006a39]">
+                <span className="material-symbols-outlined text-[18px]">eco</span>
+                <span className="font-semibold text-[14px]">8.2kg CO2 Offset</span>
               </div>
-
-              <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent pointer-events-none rounded-xl"></div>
             </div>
-          </div>
-
-          {/* Market value card */}
-          <div className="bg-white border border-[#D7E2EB] rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow flex flex-col gap-2">
-            <span className="text-sm uppercase tracking-[0.1em] text-slate-500">Market Value</span>
-            <span className="text-3xl font-bold text-[#006a39]">₹28,500.00</span>
-            <span className="text-sm text-slate-500">Based on recent sales for iPhone 12 Pro (256GB)</span>
           </div>
         </div>
       </div>
