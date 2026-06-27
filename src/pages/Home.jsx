@@ -62,17 +62,41 @@ function HeroSection() {
               <span>Device Analysis</span>
               <span className="material-symbols-outlined">wifi_tethering</span>
             </div>
-            <div className="relative mt-4 min-h-[200px] rounded-xl border border-dashed border-[#D7E2EB] bg-[#f0f4f6]">
+            <div className="relative mt-4 min-h-[240px] rounded-xl border border-dashed border-[#D7E2EB] bg-[#f0f4f6] overflow-hidden">
+              {/* Inner subtle background card */}
               <div className="absolute inset-[16px_24px_32px] rounded-lg bg-white shadow-sm"></div>
-              <div className="absolute top-6 left-5 px-3 py-1 rounded-full bg-blue-50 text-[#0058bb] text-xs font-semibold">
-                Scanning...
+              
+              {/* Floating Data Chips */}
+              <div 
+                className="absolute top-6 right-6 p-4 rounded-xl shadow-lg z-20 animate-bounce"
+                style={{ 
+                  background: "rgba(255,255,255,0.7)", 
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: "1px solid rgba(255,255,255,0.4)" 
+                }}
+              >
+                <p className="text-[10px] text-[#006a39] font-bold uppercase tracking-widest mb-1">RECOVERY VALUE</p>
+                <p className="text-2xl font-bold text-[#171c1e]" style={{ fontFamily: "'Hanken Grotesk', sans-serif" }}>$342.15</p>
               </div>
-              <div className="absolute bottom-[52px] right-7 px-3 py-1 rounded-full bg-[#EAF4F4] text-[#0A7A42] text-xs font-semibold">
-                Battery 88%
+
+              <div 
+                className="absolute bottom-12 left-6 p-4 rounded-xl shadow-lg z-20 animate-pulse" 
+                style={{ 
+                  animationDelay: "1.5s",
+                  background: "rgba(255,255,255,0.7)", 
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: "1px solid rgba(255,255,255,0.4)" 
+                }}
+              >
+                <div className="flex items-center gap-2 text-[#006a39]">
+                  <span className="material-symbols-outlined text-[18px]">eco</span>
+                  <span className="font-semibold text-[14px]">8.2kg CO2 Offset</span>
+                </div>
               </div>
-              <div className="absolute bottom-[18px] left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-full shadow-md text-sm font-semibold whitespace-nowrap">
-                Est. Value ₹28,500
-              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent pointer-events-none rounded-xl"></div>
             </div>
           </div>
 
