@@ -17,6 +17,7 @@ import MarketRates from "./pages/MarketRates.jsx";
 import Enterprise  from "./pages/Enterprise.jsx";
 import History     from "./pages/History.jsx";
 import Scanner     from "./pages/Scanner.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 /* ── Wrapper that adds shared Header + Footer ── */
 function PublicLayout({ children }) {
@@ -37,12 +38,12 @@ export default function App() {
         <Route path="/login"      element={<Login />}     />
         <Route path="/register"   element={<Register />}  />
 
-        {/* ── Dashboard routes (own DashboardLayout sidebar) ── */}
-        <Route path="/dashboard"    element={<Dashboard />}   />
-        <Route path="/market-rates" element={<MarketRates />} />
-        <Route path="/enterprise"   element={<Enterprise />}  />
-        <Route path="/history"      element={<History />}     />
-        <Route path="/scanner"      element={<Scanner />}     />
+        {/* ── Dashboard routes (Protected + own DashboardLayout sidebar) ── */}
+        <Route path="/dashboard"    element={<ProtectedRoute><Dashboard /></ProtectedRoute>}   />
+        <Route path="/market-rates" element={<ProtectedRoute><MarketRates /></ProtectedRoute>} />
+        <Route path="/enterprise"   element={<ProtectedRoute><Enterprise /></ProtectedRoute>}  />
+        <Route path="/history"      element={<ProtectedRoute><History /></ProtectedRoute>}     />
+        <Route path="/scanner"      element={<ProtectedRoute><Scanner /></ProtectedRoute>}     />
 
         {/* ── Public landing page (Header + Footer wrapper) ── */}
         <Route

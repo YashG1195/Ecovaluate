@@ -4,11 +4,14 @@
 // wrapping whatever children you pass in.
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
 
 const NAV_ITEMS = [
   { icon: "dashboard",        label: "Overview",     to: "/dashboard" },
   { icon: "document_scanner", label: "AI Scanner",   to: "/scanner" },
   { icon: "trending_up",      label: "Market Rates", to: "/market-rates" },
+  { icon: "business",         label: "Enterprise",   to: "/enterprise" },
   { icon: "history",          label: "History",      to: "/history" },
   { icon: "settings",         label: "Settings",     to: "/settings" },
 ];
@@ -24,9 +27,14 @@ export default function DashboardLayout({ children, pageTitle = "Dashboard", pag
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleSignOut = () => {
-    localStorage.removeItem("token");
-    navigate("/login");
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem("token");
+      navigate("/login");
+    } catch (error) {
+      console.error("Failed to sign out:", error);
+    }
   };
 
   return (
